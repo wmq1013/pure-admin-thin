@@ -1,0 +1,33 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# 构建部署指南
+
+## 开发环境
+- 使用 `pnpm dev` 启动开发服务器
+- 开发服务器配置在 [vite.config.ts](mdc:vite.config.ts)
+- 支持热更新和自动重载
+
+## 构建流程
+- 使用 `pnpm build` 进行生产环境构建
+- 构建输出目录为 `dist/`
+- 支持多环境配置（开发、测试、生产）
+
+## Docker 部署
+- 使用 [Dockerfile](mdc:Dockerfile) 构建镜像
+- 支持多阶段构建
+- 使用 nginx 作为 Web 服务器
+
+## 环境变量
+- 开发环境：`.env.development`
+- 生产环境：`.env.production`
+- 测试环境：`.env.test`
+
+## 部署检查清单
+- 运行所有测试
+- 检查构建产物
+- 验证环境变量
+- 检查 Docker 镜像
+- 确认 nginx 配置
