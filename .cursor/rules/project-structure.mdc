@@ -1,0 +1,89 @@
+---
+description:
+globs:
+alwaysApply: false
+---
+# 项目结构规范
+
+## 目录结构
+
+```
+├── src/                    # 源代码目录
+│   ├── components/         # 公共组件目录
+│   │   ├── common/        # 通用组件
+│   │   └── business/      # 业务组件
+│   ├── utils/             # 工具函数目录
+│   │   ├── request.ts     # 请求封装
+│   │   └── common.ts      # 公共方法
+│   ├── styles/            # 样式文件目录
+│   │   ├── tailwind/      # Tailwind CSS 配置
+│   │   └── scss/          # SCSS 样式文件
+│   ├── views/             # 页面视图目录
+│   ├── router/            # 路由配置
+│   ├── store/             # 状态管理
+│   ├── api/               # API 接口定义
+│   └── assets/            # 静态资源
+├── public/                # 公共资源目录
+├── mock/                  # 模拟数据
+└── build/                 # 构建配置
+```
+
+## 开发规范
+
+### 组件开发规范
+- 所有公共组件必须放在 `@/src/components` 目录下
+- 通用组件放在 `@/src/components/common` 目录
+- 业务组件放在 `@/src/components/business` 目录
+- 组件命名采用 PascalCase 命名规范
+- 组件文件结构：
+  ```
+  ComponentName/
+  ├── index.vue          # 组件主文件
+  ├── types.ts           # 类型定义
+  └── style.scss         # 组件样式
+  ```
+
+### 工具函数规范
+- 所有公共方法必须放在 `@/src/utils/common.ts` 文件中
+- 工具函数必须添加类型定义
+- 必须添加注释说明用途和参数
+- 按功能模块分类组织代码
+- 导出方式：
+  ```typescript
+  // 示例
+  export const formatDate = (date: Date): string => {
+    // 实现
+  }
+  ```
+
+### 样式开发规范
+- 使用 Tailwind CSS 作为主要样式解决方案
+- 复杂样式使用 SCSS 编写
+- 组件样式文件使用 `.scss` 扩展名
+- 遵循 BEM 命名规范
+- 避免使用行内样式
+
+### 文件命名规范
+- 组件文件：PascalCase（如：`UserProfile.vue`）
+- 工具函数：camelCase（如：`formatDate.ts`）
+- 样式文件：kebab-case（如：`user-profile.scss`）
+- 类型定义：PascalCase（如：`UserTypes.ts`）
+
+### 代码组织
+- 相关文件应该放在同一目录下
+- 保持目录结构清晰，避免过深的嵌套
+- 及时清理无用文件和代码
+- 遵循单一职责原则
+
+
+
+
+
+
+
+
+
+
+
+
+
